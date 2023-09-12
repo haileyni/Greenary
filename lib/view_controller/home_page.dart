@@ -60,11 +60,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           width: 90,
                           height: 90,
                         ),
-                        SizedBox(height: 4), // 图片和名称之间的间距
+                        SizedBox(height: 2), // 图片和名称之间的间距
                         Text(
                           tree.name,
                           style: TextStyle(
-                            fontSize: 24, // 增大名称字体大小
+                            fontSize: 20, // 增大名称字体大小
                           ),
                         ),
                       ],

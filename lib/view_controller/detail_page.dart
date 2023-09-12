@@ -18,97 +18,114 @@ class DetailPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Name: ${data.name}',
-              style: TextStyle(fontSize: 24), // 更改字体大小为18
-            ),
-            Text(
-              'Info: ${data.info}',
-              style: TextStyle(fontSize: 18), // 更改字体大小为18
-            ),
-            SizedBox(height: 16),
-            Image.asset(data.icon, width: 100, height: 100),
-            SizedBox(height: 16),
             Row(
               children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      Icon(Icons.water),
-                      SizedBox(height: 8), // 增加垂直间距
-                      Text(
-                        'Humidity: ${data.humidity}',
-                        style: TextStyle(fontSize: 18), // 更改字体大小为18
-                      ),
-                    ],
-                  ),
+                Image.asset(
+                  data.icon,
+                  width: 100,
+                  height: 100,
+                  fit: BoxFit.cover,
                 ),
+                const SizedBox(width: 16),
                 Expanded(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(Icons.wb_sunny),
-                      SizedBox(height: 8), // 增加垂直间距
                       Text(
-                        'Sunlight: ${data.sunlight}',
-                        style: TextStyle(fontSize: 18), // 更改字体大小为18
+                        'Name: ${data.name}',
+                        style: const TextStyle(fontSize: 18),
+                      ),
+                      const SizedBox(height: 6),
+                      Text(
+                        'Category: ${data.info}',
+                        style: const TextStyle(fontSize: 18),
+                      ),
+                      const SizedBox(height: 6),
+                      Text(
+                        'Nutrition: ${data.nutritionalValue}',
+                        style: const TextStyle(fontSize: 18),
                       ),
                     ],
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      Icon(Icons.star),
-                      SizedBox(height: 8), // 增加垂直间距
-                      Text(
-                        'Difficulty: ${data.difficulty}',
-                        style: TextStyle(fontSize: 18), // 更改字体大小为18
-                      ),
-                    ],
-                  ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(Icons.wb_sunny),
+                        Text('Sunlight: ${data.sunlight}',
+                            style: const TextStyle(fontSize: 18)),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Icon(Icons.opacity),
+                        Text('Humidity: ${data.humidity}',
+                            style: const TextStyle(fontSize: 18)),
+                      ],
+                    ),
+                  ],
                 ),
-                Expanded(
-                  child: Column(
-                    children: [
-                      Icon(Icons.timer),
-                      SizedBox(height: 8), // 增加垂直间距
-                      Text(
-                        'Ripe Time: ${data.ripetime}',
-                        style: TextStyle(fontSize: 18), // 更改字体大小为18
-                      ),
-                    ],
-                  ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(Icons.star),
+                        Text('Difficulty: ${data.difficulty}',
+                            style: const TextStyle(fontSize: 18)),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Icon(Icons.timelapse),
+                        Text('Ripetime: ${data.ripetime}',
+                            style: const TextStyle(fontSize: 18)),
+                      ],
+                    ),
+                  ],
                 ),
               ],
             ),
-            SizedBox(height: 16),
-            SizedBox(height: 16), // 增加垂直间距
-            Text(
-              'Water: ${data.water}',
-              style: TextStyle(fontSize: 18), // 更改字体大小为18
-            ),
-            SizedBox(height: 8), // 增加垂直间距
-            Text(
-              'Fertilizer: ${data.fertilizer}',
-              style: TextStyle(fontSize: 18), // 更改字体大小为18
-            ),
-            SizedBox(height: 8), // 增加垂直间距
-            Text(
-              'Soil: ${data.soil}',
-              style: TextStyle(fontSize: 18), // 更改字体大小为18
-            ),
-            SizedBox(height: 8), // 增加垂直间距
-            Text(
-              'Tips: ${data.tips}',
-              style: TextStyle(fontSize: 18), // 更改字体大小为18
-            ),
+            const SizedBox(height: 16),
+            Text('Water: ${data.water}', style: const TextStyle(fontSize: 18)),
+            const SizedBox(height: 6),
+            Text('Fertilizer: ${data.fertilizer}',
+                style: const TextStyle(fontSize: 18)),
+            const SizedBox(height: 6),
+            Text('Soil: ${data.soil}', style: const TextStyle(fontSize: 18)),
+            const SizedBox(height: 6),
+            Text('Tips: ${data.tips}', style: const TextStyle(fontSize: 18)),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.green,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_month),
+            label: 'Schedule',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
       ),
     );
   }
