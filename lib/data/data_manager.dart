@@ -50,6 +50,20 @@ class DataManager {
         name: row['t_name'],
         info: row['t_info'],
         icon: row['t_icon'],
+        nutritionalValue: row['t_nutritional_value'],
+        culinaryUses: row['t_culinary_uses'],
+        difficulty: row['t_difficulty'],
+        ripetime: row['t_ripetime'],
+        bestPlantingTimeZone1: row['t_best_planting_time_zone_1'],
+        bestPlantingTimeZone2: row['t_best_planting_time_zone_2'],
+        bestPlantingTimeZone3: row['t_best_planting_time_zone_3'],
+        humidity: row['t_humidity'],
+        temperature: row['t_temperature'],
+        sunlight: row['t_sunlight'],
+        soil: row['t_soil'],
+        water: row['t_water'],
+        fertilizer: row['t_fertilizer'],
+        tips: row['t_tips'],
       );
     }).toList();
 
