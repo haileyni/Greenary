@@ -13,7 +13,7 @@ class DataManager {
     var path = join(databasesPath, dbName);
 
     // Check if the database exists
-    var exists = await databaseExists(path);
+    var exists = false;
 
     if (!exists) {
       // Should happen only the first time you launch your application
