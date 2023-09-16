@@ -35,6 +35,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2, // 每行显示2个项目
+                  mainAxisSpacing: 1, // 在主轴上设置行之间的间距
+                  crossAxisSpacing: 6, // 在交叉轴上设置列之间的间距
                 ),
                 itemCount: widget.trees.length,
                 itemBuilder: (context, index) {
@@ -72,39 +74,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   );
                 },
               ),
-            ),
-          ],
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _currentIndex,
-          onTap: (int index) {
-            setState(() {
-              _currentIndex = index;
-              // 根据索引执行导航到不同页面的操作
-              if (index == 0) {
-                // 导航到首页
-              } else if (index == 1) {
-                // 导航到搜索页面
-              }
-              // 添加更多的条件以处理其他索引
-            });
-          },
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Search',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.calendar_month),
-              label: 'Schedule',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
             ),
           ],
         ),
