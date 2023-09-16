@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'view_controller/home_page.dart';
 import 'data/data_manager.dart';
 import 'model/tree.dart';
+import 'view_controller/main_tab_controller.dart'; // 新增
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           }
 
           final List<Tree> trees = snapshot.data!;
-          return MyHomePage(trees: trees);
+          return MainTabController(trees: trees);
         },
       ),
     );

@@ -8,6 +8,14 @@ This repository contains a Flutter project.
 
 Follow the steps below to set up your development environment for Flutter， VScode and SQLite.
 
+## Installation
+
+Make sure your development environment meets the following requirements:
+
+- Windows 10 or higher (64-bit operating system)
+- At least 1.64 GB of available disk space
+- Developer mode enabled
+
 ### 1. Install Flutter
 
 1. Visit the [Flutter website](https://flutter.dev/) to download the Flutter SDK.
@@ -22,9 +30,11 @@ Follow the steps below to set up your development environment for Flutter， VSc
 4. Search for the "Dart" extension and click "Install" to install Dart.
 
 ### 3. Install SQLite
+- Download the SQLite tools and binaries from the [SQLite Download Page](https://www.sqlite.org/download.html).
+- Extract the downloaded archive to a preferred directory.
+- Add the directory containing `sqlite3.exe` to your system's `PATH` environment variable.
 
-
-### 4. Configure Flutter and SQLite
+### 4. Configure Flutter
 
 1. Open your Flutter project in VS Code.
 2. Run the following command in the terminal to ensure your Flutter environment is set up properly:
@@ -34,14 +44,13 @@ r
 Copy code
 Follow any additional instructions provided by `flutter doctor` to resolve any issues.
 
-### 4. SQLite Setup
-
-If your Flutter project involves SQLite database usage, follow these steps to configure SQLite:
+### 5. SQLite Setup
 
 1. Add the `sqflite` package to your `pubspec.yaml` file:
 ```yaml
 dependencies:
   sqflite: ^2.0.0
+  
 Run flutter pub get to fetch the package.
 Now your development environment is ready for Flutter and SQLite development.
 

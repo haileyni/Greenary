@@ -44,10 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   return GestureDetector(
                     onTap: () {
-                      print("Grid Item tapped!");
-
-                      Navigator.push(
-                        context,
+                      Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => DetailPage(data: tree),
                         ),
