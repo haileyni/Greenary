@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'data/data_manager.dart';
 import 'model/tree.dart';
-import 'view_controller/main_tab_controller.dart'; // 新增
+import 'view_controller/main_tab_controller.dart'; // new
 
 void main() {
   runApp(const MyApp());

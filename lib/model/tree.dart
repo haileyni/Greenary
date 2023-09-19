@@ -16,6 +16,8 @@ class Tree {
   final String water;
   final String fertilizer;
   final String tips;
+  final int tempMin;
+  final int tempMax;
   String icon;
 
   Tree({
@@ -36,6 +38,8 @@ class Tree {
     required this.water,
     required this.fertilizer,
     required this.tips,
+    required this.tempMin,
+    required this.tempMax,
     required String icon,
   }) : this.icon = 'assets/icons/$icon.png';
 }

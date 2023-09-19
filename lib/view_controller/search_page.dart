@@ -58,7 +58,7 @@ class _T_SearchControllerState extends State<T_SearchController> {
               },
               decoration: InputDecoration(
                 labelText: "Search",
-                hintText: "Search for trees",
+                hintText: "Search for plants",
                 prefixIcon: Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(25.0)),

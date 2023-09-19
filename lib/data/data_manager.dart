@@ -64,6 +64,8 @@ class DataManager {
         water: row['t_water'],
         fertilizer: row['t_fertilizer'],
         tips: row['t_tips'],
+        tempMin: row['t_tem_min'],
+        tempMax: row['t_tem_max'],
       );
     }).toList();
 

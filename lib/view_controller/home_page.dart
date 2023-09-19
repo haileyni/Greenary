@@ -22,7 +22,7 @@ class _MyHomePageState extends State<MyHomePage> {
       home: Scaffold(
         appBar: AppBar(
           title: Text(
-            "Today's Pick",
+            "Home Page",
             style: TextStyle(
               fontSize: 24, // 增大标题字体大小
             ),
@@ -44,7 +44,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   return GestureDetector(
                     onTap: () {
-                      Navigator.of(context).push(
+                      print("Grid Item tapped!");
+
+                      Navigator.push(
+                        context,
                         MaterialPageRoute(
                           builder: (context) => DetailPage(data: tree),
                         ),
