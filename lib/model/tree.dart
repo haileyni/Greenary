@@ -1,7 +1,21 @@
+enum PlantType {
+  Vegetable, //0
+  Fruit, //1
+}
+
+int plantTypeToDatabaseValue(PlantType type) {
+  return type.index; // 将枚举值转换为对应的索引
+}
+
+PlantType databaseValueToPlantType(int value) {
+  return PlantType.values[value]; // 根据索引获取对应的枚举值
+}
+
 class Tree {
   final int id;
   final String name;
   final String info;
+  final int type;
   final String nutritionalValue;
   final String culinaryUses;
   final String difficulty;
@@ -24,6 +38,7 @@ class Tree {
     required this.id,
     required this.name,
     required this.info,
+    required this.type,
     required this.nutritionalValue,
     required this.culinaryUses,
     required this.difficulty,

@@ -8,14 +8,18 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class RecommendationPage extends StatefulWidget {
+  final List<Tree> trees;
+
+  const RecommendationPage({Key? key, required this.trees}) : super(key: key);
+
   @override
   _RecommendationPageState createState() => _RecommendationPageState();
 }
 
 class _RecommendationPageState extends State<RecommendationPage> {
-  String selectedDifficulty = 'easy';
+  String selectedDifficulty = 'Easy';
   String selectedClimateZone = 'zone1';
-  String selectedPlantType = 'vegetables';
+  String selectedPlantType = 'Vegetable';
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +84,7 @@ class _RecommendationPageState extends State<RecommendationPage> {
                   selectedDifficulty = value!;
                 });
               },
-              items: ['easy', 'medium', 'difficult'].map((difficulty) {
+              items: ['Easy', 'Medium', 'Difficult'].map((difficulty) {
                 return DropdownMenuItem<String>(
                   value: difficulty,
                   child: Text(difficulty),
@@ -99,7 +103,7 @@ class _RecommendationPageState extends State<RecommendationPage> {
                   selectedPlantType = value!;
                 });
               },
-              items: ['vegetables', 'fruits'].map((type) {
+              items: ['Vegetable', 'Fruit'].map((type) {
                 return DropdownMenuItem<String>(
                   value: type,
                   child: Text(type),
@@ -109,23 +113,19 @@ class _RecommendationPageState extends State<RecommendationPage> {
             SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // 处理选择并跳转到下一页
                 final query = {
                   'difficulty': selectedDifficulty,
                   'zone': selectedClimateZone,
                   'plantType': selectedPlantType,
                 };
 
-                // 示例中使用空列表来代替实际数据
-                final recommendedTrees = [];
+                print("q_dict: $query");
 
-                // 跳转到结果页面并传递查询结果
-                Navigator.push(
-                  context,
+                Navigator.of(context, rootNavigator: true).push(
                   MaterialPageRoute(
                     builder: (context) => ResultPage(
+                      trees: widget.trees,
                       query: query,
-                      //                   recommendedTrees: recommendedTrees,
                     ),
                   ),
                 );

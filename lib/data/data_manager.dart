@@ -49,6 +49,7 @@ class DataManager {
         id: row['t_id'],
         name: row['t_name'],
         info: row['t_info'],
+        type: row['t_type'],
         icon: row['t_icon'],
         nutritionalValue: row['t_nutritional_value'],
         culinaryUses: row['t_culinary_uses'],

@@ -31,14 +31,15 @@ class _MainTabControllerState extends State<MainTabController> {
                 children: [
                   MyHomePage(trees: widget.trees),
                   T_SearchController(trees: widget.trees),
-                  RecommendationPage(),
+                  RecommendationPage(trees: widget.trees),
                   ProfilePage(),
                 ],
               ),
               bottomNavigationBar: BottomNavigationBar(
                 backgroundColor: Colors.green, // 设置背景颜色
-                selectedItemColor: Colors.grey, // 设置选中项的颜色
-                unselectedItemColor: Colors.green, // 设置未选中项的颜色
+                selectedItemColor: Color.fromARGB(255, 21, 192, 16), // 设置选中项的颜色
+                unselectedItemColor:
+                    Color.fromARGB(255, 162, 185, 163), // 设置未选中项的颜色
                 currentIndex: _currentIndex,
                 onTap: (index) {
                   setState(() {
