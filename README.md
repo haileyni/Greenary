@@ -29,12 +29,8 @@ Make sure your development environment meets the following requirements:
 3. Search for the "Flutter" extension and click "Install" to install the Flutter plugin.
 4. Search for the "Dart" extension and click "Install" to install Dart.
 
-### 3. Install SQLite
-- Download the SQLite tools and binaries from the [SQLite Download Page](https://www.sqlite.org/download.html).
-- Extract the downloaded archive to a preferred directory.
-- Add the directory containing `sqlite3.exe` to your system's `PATH` environment variable.
 
-### 4. Configure Flutter
+### 3. Configure Flutter
 
 1. Open your Flutter project in VS Code.
 2. Run the following command in the terminal to ensure your Flutter environment is set up properly:
@@ -44,7 +40,7 @@ r
 Copy code
 Follow any additional instructions provided by `flutter doctor` to resolve any issues.
 
-### 5. SQLite Setup
+### 4. SQLite Setup
 
 1. Add the `sqflite` package to your `pubspec.yaml` file:
 ```yaml

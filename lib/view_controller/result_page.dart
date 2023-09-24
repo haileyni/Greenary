@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import '../model/tree.dart';
 import 'detail_page.dart';
+import 'package:intl/intl.dart';
 
-class ResultPage extends StatelessWidget {
+class ResultPage extends StatefulWidget {
   final List<Tree> trees;
   final Map<String, String> query;
 
@@ -12,12 +13,35 @@ class ResultPage extends StatelessWidget {
   });
 
   @override
+  _ResultPageState createState() => _ResultPageState();
+}
+
+class _ResultPageState extends State<ResultPage> {
+  DateTime? suitablePlantingTime;
+
+  @override
+  void initState() {
+    super.initState();
+    final String plantingTimeStr = widget.query['suitablePlantingTime'] ?? '';
+
+    if (plantingTimeStr.isNotEmpty) {
+      suitablePlantingTime = DateTime.tryParse(plantingTimeStr);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     print('ResultPage Built');
 
     // 获取 query 中的筛选条件
-    String difficulty = query['difficulty'] ?? '';
-    String selectedPlantType = query['plantType'] ?? '';
+    String difficulty = widget.query['difficulty'] ?? '';
+    String selectedPlantType = widget.query['plantType'] ?? '';
+    double minTemperature = widget.query['tempMin'] != null
+        ? double.parse(widget.query['tempMin']!)
+        : double.negativeInfinity;
+    double maxTemperature = widget.query['tempMax'] != null
+        ? double.parse(widget.query['tempMax']!)
+        : double.infinity;
 
     // 将 selectedPlantType 字符串转换为 PlantType 枚举
     PlantType? plantType;
@@ -30,17 +54,23 @@ class ResultPage extends StatelessWidget {
     print("Selected plant type: $plantType");
 
     // 根据筛选条件筛选 trees 列表
-    List<Tree> filteredTrees = trees.where((tree) {
+    List<Tree> filteredTrees = widget.trees.where((tree) {
       bool matchesDifficulty = tree.difficulty == difficulty;
 
       // 将 tree 的类型从整数转换为 PlantType 枚举
       PlantType treePlantType = databaseValueToPlantType(tree.type);
       bool matchesPlantType = treePlantType == plantType;
 
+      // 检查温度是否在要求范围内
+      bool matchesTemperature =
+          tree.tempMin <= maxTemperature && tree.tempMax >= minTemperature;
+
       print("Tree difficulty: ${tree.difficulty}, Matches: $matchesDifficulty");
       print("Tree type: $treePlantType, Matches: $matchesPlantType");
+      print(
+          "Tree temp range: ${tree.tempMin}°C - ${tree.tempMax}°C, Matches: $matchesTemperature");
 
-      return matchesDifficulty && matchesPlantType;
+      return matchesDifficulty && matchesPlantType && matchesTemperature;
     }).toList();
 
     return Scaffold(
@@ -55,8 +85,14 @@ class ResultPage extends StatelessWidget {
           children: [
             Text(
               'Your Recommendations:',
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 24),
             ),
+            SizedBox(height: 20),
+            if (suitablePlantingTime != null)
+              Text(
+                'Suitable Planting Time: ${DateFormat('yyyy-MM-dd').format(suitablePlantingTime!)}',
+                style: TextStyle(fontSize: 18),
+              ),
             // 根据筛选后的结果构建网格列表
             Expanded(
               child: GridView.builder(
