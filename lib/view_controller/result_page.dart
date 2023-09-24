@@ -90,7 +90,7 @@ class _ResultPageState extends State<ResultPage> {
             SizedBox(height: 20),
             if (suitablePlantingTime != null)
               Text(
-                'Suitable Planting Time: ${DateFormat('yyyy-MM-dd').format(suitablePlantingTime!)}',
+                'Based on the weather forcast, Suitable Planting Time: ${DateFormat('yyyy-MM-dd').format(suitablePlantingTime!)}',
                 style: TextStyle(fontSize: 18),
               ),
             // 根据筛选后的结果构建网格列表
