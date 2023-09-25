@@ -23,7 +23,7 @@ class _RecommendationPageState extends State<RecommendationPage> {
   Future<void> fetchData() async {
     try {
       final String weatherUrl =
-          'https://api.openweathermap.org/data/2.5/weather?lat=-36.85582&lon=174.743042&appid=245bb630f5438d4405ede934399dfe47';
+          'https://api.openweathermap.org/data/2.5/weather?lat=-36.85582&lon=174.743042&appid=245bb630f5438d4405ede934399dfe4792826';
       final HttpClient client = HttpClient();
       final Uri uri = Uri.parse(weatherUrl);
       final HttpClientRequest request = await client.getUrl(uri);
@@ -42,7 +42,7 @@ class _RecommendationPageState extends State<RecommendationPage> {
 
       // 请求天气预报信息
       final String weatherForecastUrl =
-          'https://api.openweathermap.org/data/2.5/forecast?lat=-36.85582&lon=174.743042&appid=245bb630f5438d4405ede934399dfe47';
+          'https://api.openweathermap.org/data/2.5/forecast?lat=-36.85582&lon=174.743042&appid=245bb630f5438d4405ede934399dfe4792826';
       final Uri forecastUri = Uri.parse(weatherForecastUrl);
       final HttpClientRequest forecastRequest =
           await client.getUrl(forecastUri);
