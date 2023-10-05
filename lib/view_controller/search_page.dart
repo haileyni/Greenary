@@ -18,8 +18,8 @@ class _T_SearchControllerState extends State<T_SearchController> {
   @override
   void initState() {
     super.initState();
-    _filteredTrees = []; // 初始空白
-    // _filteredTrees = widget.trees; // 初始包含全部
+    _filteredTrees = [];
+    // _filteredTrees = widget.trees;
   }
 
   _filterSearchResults(String query) {
@@ -35,8 +35,8 @@ class _T_SearchControllerState extends State<T_SearchController> {
       });
     } else {
       setState(() {
-        _filteredTrees = []; // 清除搜索后空白
-        // _filteredTrees = widget.trees; // 清除搜索后展示全部数据
+        _filteredTrees = [];
+        // _filteredTrees = widget.trees;
       });
     }
   }

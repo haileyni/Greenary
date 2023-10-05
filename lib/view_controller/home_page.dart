@@ -17,26 +17,25 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, // 隐藏虚拟机上的 "Debug" 字样
-
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text(
             "Home Page",
             style: TextStyle(
-              fontSize: 24, // 增大标题字体大小
+              fontSize: 24,
             ),
           ),
-          backgroundColor: Colors.green, // 更改 AppBar 的背景颜色为绿色
+          backgroundColor: Colors.green,
         ),
         body: Column(
           children: [
             Expanded(
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, // 每行显示2个项目
-                  mainAxisSpacing: 1, // 在主轴上设置行之间的间距
-                  crossAxisSpacing: 6, // 在交叉轴上设置列之间的间距
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 1,
+                  crossAxisSpacing: 6,
                 ),
                 itemCount: widget.trees.length,
                 itemBuilder: (context, index) {
@@ -62,11 +61,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           width: 90,
                           height: 90,
                         ),
-                        SizedBox(height: 2), // 图片和名称之间的间距
+                        SizedBox(height: 2),
                         Text(
                           tree.name,
                           style: TextStyle(
-                            fontSize: 20, // 增大名称字体大小
+                            fontSize: 20,
                           ),
                         ),
                       ],

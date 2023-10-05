@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'data/data_manager.dart';
 import 'model/tree.dart';
-import 'view_controller/main_tab_controller.dart'; // new
+import 'view_controller/main_tab_controller.dart';
 
 void main() {
   runApp(const MyApp());

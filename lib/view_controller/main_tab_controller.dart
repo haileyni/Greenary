@@ -36,10 +36,9 @@ class _MainTabControllerState extends State<MainTabController> {
                 ],
               ),
               bottomNavigationBar: BottomNavigationBar(
-                backgroundColor: Colors.green, // 设置背景颜色
-                selectedItemColor: Color.fromARGB(255, 21, 192, 16), // 设置选中项的颜色
-                unselectedItemColor:
-                    Color.fromARGB(255, 162, 185, 163), // 设置未选中项的颜色
+                backgroundColor: Colors.green,
+                selectedItemColor: Color.fromARGB(255, 21, 192, 16),
+                unselectedItemColor: Color.fromARGB(255, 162, 185, 163),
                 currentIndex: _currentIndex,
                 onTap: (index) {
                   setState(() {
