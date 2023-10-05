@@ -1,11 +1,11 @@
 // main_tab_controller.dart
 
 import 'package:flutter/material.dart';
-import '../view_controller/home_page.dart';
-import '../view_controller/search_page.dart';
-import '../view_controller/profile_page.dart';
+import '../view/home_page.dart';
+import '../view/search_page.dart';
+import '../view/profile_page.dart';
 import '../model/tree.dart';
-import '../view_controller/recommendation_page.dart';
+import '../view/recommendation_page.dart';
 
 class MainTabController extends StatefulWidget {
   final List<Tree> trees;

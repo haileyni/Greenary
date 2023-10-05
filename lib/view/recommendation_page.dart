@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_declarations
+
 import 'package:flutter/material.dart';
 import '../model/tree.dart';
 import 'result_page.dart';
@@ -83,7 +85,7 @@ class _RecommendationPageState extends State<RecommendationPage> {
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance?.addPostFrameCallback((_) async {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       await fetchData();
     });
   }
