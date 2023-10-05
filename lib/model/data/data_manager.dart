@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-import '../model/tree.dart';
+import '../tree.dart';
 
 class DataManager {
   static const String dbName = 'tree_info.sqlite';
